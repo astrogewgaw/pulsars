@@ -1,0 +1,17 @@
+@ARTICLE{2005AJ....129.1993M,
+       author = {{Manchester}, R.~N. and {Hobbs}, G.~B. and {Teoh}, A. and {Hobbs}, M.},
+        title = "{The Australia Telescope National Facility Pulsar Catalogue}",
+      journal = {\aj},
+     keywords = {Catalogs, Stars: Pulsars: General, Astrophysics},
+         year = 2005,
+        month = apr,
+       volume = {129},
+       number = {4},
+        pages = {1993-2006},
+          doi = {10.1086/428488},
+archivePrefix = {arXiv},
+       eprint = {astro-ph/0412641},
+ primaryClass = {astro-ph},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2005AJ....129.1993M},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
