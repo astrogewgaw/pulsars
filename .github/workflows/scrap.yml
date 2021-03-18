@@ -26,6 +26,7 @@ jobs:
       - name: Run the scrapping script.
         run: |
           python scrap.py
+          git add README.md
           git add pcat.json pref.json
           git config --global user.email "pulsarbot@example.com"
           git config --global user.name "pulsarbot"
