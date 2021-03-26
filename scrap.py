@@ -4,7 +4,7 @@ import tarfile
 import requests
 
 from pathlib import Path
-from schema import Use, Schema
+from schema import Use, Schema  # type: ignore
 from typing import Any, Dict, Union, Generator
 
 
@@ -75,7 +75,8 @@ def upload() -> Dict:
             mode="r:gz",
         ) as tarball:
             fobj = tarball.extractfile(exfile)
-            data[abbr] = fobj.read().decode()
+            if fobj is not None:
+                data[abbr] = fobj.read().decode()
     return data
 
 
@@ -88,7 +89,7 @@ def pcat(data: str) -> None:
 
     pcat: Dict = {}
 
-    version = lambda hdr: re.search(
+    version = lambda hdr: re.search(  # type: ignore
         vex,
         hdr,
     ).groupdict()["version"]
@@ -133,8 +134,8 @@ def pcat(data: str) -> None:
             3: lambda k, v, ref: {k: v, refk(k): ref},
             4: lambda k, v, err, ref: {k: v, errk(k): err, refk(k): ref},
         }[len(cols)]
-        pd = pp(*cols)
-        pd = kvs.validate(pd)
+        pd = pp(*cols)  # type: ignore
+        pd = kvs.validate(pd)  # type: ignore
         return pd  # type: ignore
 
     # Now that we have all the tools at hand, time
