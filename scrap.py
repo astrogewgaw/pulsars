@@ -80,7 +80,7 @@ def upload() -> Dict:
     return data
 
 
-def pcat(data: str) -> None:
+def pcat(data: str) -> Dict:
 
     """
     Parse the ATNF pulsar database into a dictionary
@@ -149,17 +149,10 @@ def pcat(data: str) -> None:
             pulsar.update(parse(line))
         pcat[str(i + 1)] = pulsar
 
-    # Serialise it to a JSON file.
-
-    with open("pcat.json", "w+") as fobj:
-        json.dump(
-            pcat,
-            fobj,
-            indent=4,
-        )
+    return pcat
 
 
-def pref(data: str) -> None:
+def pref(data: str) -> Dict:
 
     """
     Parse the references from the "psrcat_ref" file
@@ -167,17 +160,11 @@ def pref(data: str) -> None:
     that into a JSON file.
     """
 
-    pref = {
+    return {
         line.split()[0]: " ".join(line.split()[2:])
         for line in data.strip().split("***")
         if len(line) > 0
     }
-    with open("pref.json", "w+") as fobj:
-        json.dump(
-            pref,
-            fobj,
-            indent=4,
-        )
 
 
 def scrap() -> None:
@@ -189,8 +176,16 @@ def scrap() -> None:
     """
 
     download()
+
+    pulsars: Dict = {}
     for key, data in upload().items():
-        {"pcat": pcat, "pref": pref}[key](data)
+        pulsars[key] = {"pcat": pcat, "pref": pref}[key](data)
+        with open("pulsars.json", "w+") as fobj:
+            json.dump(
+                pulsars,
+                fobj,
+                indent=4,
+            )
     Path("psrcat_pkg.tar.gz").unlink()
 
 
@@ -202,8 +197,8 @@ if __name__ == "__main__":
     # Get the current version of the database from
     # the JSON file that we have just scraped, and
     # put it into a "v0.01" format.
-    with open("pcat.json", "r") as fobj:
-        version = "".join(["v", json.load(fobj)["version"]])
+    with open("pulsars.json", "r") as fobj:
+        version = "".join(["v", json.load(fobj)["pcat"]["version"]])
 
     # Read in the README file.
     with open("README.md", "r") as fobj:
