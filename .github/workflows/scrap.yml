@@ -27,7 +27,7 @@ jobs:
         run: |
           python scrap.py
           git add README.md
-          git add pcat.json pref.json
+          git add pulsars.json
           git config --global user.email "pulsarbot@example.com"
           git config --global user.name "pulsarbot"
           git commit -m "ATNF pulsars database updated: `date +'%Y-%m-%d %H:%M:%S'`" || true
