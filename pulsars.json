@@ -1,6 +1,5 @@
 {
-    "pcat": {
-        "version": "1.64",
+    "data": {
         "1": {
             "PSRJ": "J0002+6216",
             "PSRJ_REF": "cwp+17",
@@ -116708,7 +116707,7 @@
         },
         "2873": {}
     },
-    "pref": {
+    "refs": {
         "aaa+09c": "Abdo, A. A., Ackermann, M., Ajello, M., Anderson, B., Atwood, W. B., Axelsson, M., Baldini, L., Ballet, J., Barbiellini, G., Baring, M. G. & et al., 2009. Detection of 16 Gamma-Ray Pulsars Through Blind Frequency Searches Using the Fermi LAT. Science, 325, 840-.",
         "aaa+09f": "Abdo, A. A., Ackermann, M., Ajello, M., Atwood, W. B., Axelsson, M., Baldini, L., Ballet, J., Barbiellini, G., Baring, M. G., Bastieri, D. & et al., 2009. A Population of Gamma-Ray Millisecond Pulsars Seen with the Fermi Large Area Telescope. Science, 325, 848-852.",
         "aaa+09i": "Abdo, A. A., Ackermann, M., Ajello, M., Atwood, W. B., Axelsson, M., Baldini, L., Ballet, J., Barbiellini, G., Baring, M. G., Bastieri, D. & et al., 2009. Fermi Large Area Telescope Detection of Pulsed gamma-rays from the Vela-like Pulsars PSR J1048ndash5832 and PSR J2229+6114. ApJ, 706, 1331-1340.",
@@ -117774,5 +117773,6 @@
         "zhw+05": "Zou, W. Z., Hobbs, G., Wang, N., Manchester, R. N., Wu, X. J. & Wang, H. X., 2005. Timing measurements and proper motions of 74 pulsars using the Nanshan radio telescope. MNRAS, 362, 1189-1198.",
         "zwm+08": "Zou, W. Z., Wang, N., Manchester, R. N., Urama, J. O., Hobbs, G., Liu, Z. Y. & Yuan, J. P., 2008. Observations of six glitches in PSR B1737-30. MNRAS, 384, 1063-1068.",
         "zkk+19": "Zyuzin, D. A., Kirichenko, A. Y., Karpova, A. V., Shibanov, Y. A., Zharikov, S. V., Fonseca, E. & Cabrera-Lavers, A., 2019. Detection of the PSR J1741+1351 white dwarf companion with the Gran Telescopio Canarias. <b> J. Physics Conf. Series, 022013."
-    }
+    },
+    "version": "1.64"
 }
